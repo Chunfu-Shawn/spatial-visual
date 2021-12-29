@@ -1,27 +1,54 @@
 {
   "name": "slideseq",
-  "version": "1.0.5",
+  "version": "1.0.4",
   "description": "Slideseq of whole brain",
   "public": true,
+
   "datasets": [
     {
       "uid": "chunfu-2021",
       "name": "chunfu2021",
       "files": [
         {
+          "url": "https://rhesusbase.com:999/data/adata_a2p2_bin20.telen.m500.cluster.zarr",
           "type": "cells",
-          "fileType": "cells.json",
-          "url": "http://localhost:9000/cells.json"
+          "fileType": "anndata-cells.zarr",
+          "options": {
+             "xy": "obsm/spatial",
+             "mappings": {
+              "UMAP": {
+                "key": "obsm/X_umap",
+                "dims": [ 0, 1 ]
+              },
+              "PCA": {
+                "key": "obsm/X_pca",
+                "dims": [ 4, 5 ]
+              }
+            },
+            "factors": [
+              "obs/leiden_hvg2k"
+            ]
+          }
         },
         {
+          "url": "https://rhesusbase.com:999/data/adata_a2p2_bin20.telen.m500.cluster.zarr",
           "type": "cell-sets",
-          "fileType": "cell-sets.json",
-          "url": "http://localhost:9000/cell-sets.json"
+          "fileType": "anndata-cell-sets.zarr",
+          "options": [
+            {
+              "groupName": "Ledien",
+              "setName": "obs/leiden_hvg2k"
+            }
+          ]
         },
         {
+          "url": "https://rhesusbase.com:999/data/adata_a2p2_bin20.telen.m500.cluster.zarr",
           "type": "expression-matrix",
-          "fileType": "clusters.json",
-          "url": "http://localhost:9000/expression-matrix.json"
+          "fileType": "anndata-expression-matrix.zarr",
+          "options": {
+            "matrix": "X",
+            "matrixGeneFilter": "var/highly_variable"
+          }
         }
       ]
     }
@@ -52,65 +79,24 @@
       "UMAP": 3
     },
     "spatialZoom": {
-      "A": -4
+      "A": 1.5
     },
     "spatialTargetX": {
-      "A": 3000
+      "A": 650
     },
     "spatialTargetY": {
-      "A": 3000
+      "A": 250
     },
     "spatialCellsLayer": {
       "1": {
         "opacity": 1,
-        "radius": 20,
+        "radius": 0.5,
         "visible": true,
         "stroked": false
       }
     }
   },
   "layout": [
-    {
-      "component": "genes",
-      "x": 9,
-      "y": 0,
-      "w": 3,
-      "h": 4
-    },
-    {
-      "component": "status",
-      "x": 0,
-      "y": 4,
-      "w": 5,
-      "h": 2
-    },
-    {
-      "component": "cellSets",
-      "x": 9,
-      "y": 4,
-      "w": 3,
-      "h": 2
-    },
-    {
-      "component": "cellSetSizes",
-      "x": 5,
-      "y": 4,
-      "w": 4,
-      "h": 2
-    },
-    {
-      "component": "spatial",
-      "coordinationScopes": {
-        "spatialZoom": "A",
-        "spatialTargetX": "A",
-        "spatialTargetY": "A",
-        "spatialCellsLayer": "1"
-      },
-      "x": 5,
-      "y": 0,
-      "w": 4,
-      "h": 4
-    },
     {
       "component": "scatterplot",
       "coordinationScopes": {
@@ -124,8 +110,49 @@
       },
       "x": 0,
       "y": 0,
-      "w": 5,
-      "h": 4
+      "w": 3,
+      "h": 3
+    },
+    {
+      "component": "cellSetExpression",
+      "x": 0,
+      "y": 3,
+      "w": 3,
+      "h": 2
+    },
+    {
+      "component": "spatial",
+      "coordinationScopes": {
+        "spatialZoom": "A",
+        "spatialTargetX": "A",
+        "spatialTargetY": "A",
+        "spatialCellsLayer": "1"
+      },
+      "x": 3,
+      "y": 0,
+      "w": 6,
+      "h": 5
+    },
+    {
+      "component": "genes",
+      "x": 9,
+      "y": 0,
+      "w": 3,
+      "h": 2
+    },
+    {
+      "component": "cellSets",
+      "x": 9,
+      "y": 2,
+      "w": 3,
+      "h": 2
+    },
+    {
+      "component": "status",
+      "x": 9,
+      "y": 4,
+      "w": 3,
+      "h": 1
     }
   ]
 }

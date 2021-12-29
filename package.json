@@ -1,6 +1,7 @@
 {
   "name": "spatial-visual",
   "version": "0.1.0",
+  "main": "index.js",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
@@ -11,7 +12,8 @@
     "react-scripts": "4.0.3",
     "txml": "^5.1.1",
     "vitessce": "^1.1.17",
-    "web-vitals": "^1.1.2"
+    "web-vitals": "^1.1.2",
+    "webpack": "^4.44.2"
   },
   "scripts": {
     "start": "react-scripts start",
