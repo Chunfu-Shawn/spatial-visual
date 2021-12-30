@@ -10,7 +10,7 @@ export default function MyApp() {
     return (
         <Vitessce
             config={myViewConfig}
-            height={1000}
+            height={600}
             theme="light"
         />
     );
