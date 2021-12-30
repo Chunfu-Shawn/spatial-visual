@@ -10,7 +10,7 @@
       "name": "chunfu2021",
       "files": [
         {
-          "url": "https://rhesusbase.com:999/data/adata_a2p2_bin20.telen.m500.cluster.zarr",
+          "url": "https://rhesusbase.com:9999/adata_a2p2.telen.m500.log1p.leiden.deg.tangram.zarr",
           "type": "cells",
           "fileType": "anndata-cells.zarr",
           "options": {
@@ -21,33 +21,33 @@
                 "dims": [ 0, 1 ]
               },
               "PCA": {
-                "key": "obsm/X_pca",
+                "key": "obsm/X_pca_hvg2k",
                 "dims": [ 4, 5 ]
               }
             },
             "factors": [
-              "obs/leiden_hvg2k"
+              "obs/anno1_cell_leiden2ct"
             ]
           }
         },
         {
-          "url": "https://rhesusbase.com:999/data/adata_a2p2_bin20.telen.m500.cluster.zarr",
+          "url": "https://rhesusbase.com:9999/adata_a2p2.telen.m500.log1p.leiden.deg.tangram.zarr",
           "type": "cell-sets",
           "fileType": "anndata-cell-sets.zarr",
           "options": [
             {
-              "groupName": "Ledien",
-              "setName": "obs/leiden_hvg2k"
+              "groupName": "cell_leiden",
+              "setName": "obs/anno1_cell_leiden2ct"
             }
           ]
         },
         {
-          "url": "https://rhesusbase.com:999/data/adata_a2p2_bin20.telen.m500.cluster.zarr",
+          "url": "https://rhesusbase.com:9999/adata_a2p2.telen.m500.log1p.leiden.deg.tangram.zarr",
           "type": "expression-matrix",
           "fileType": "anndata-expression-matrix.zarr",
           "options": {
             "matrix": "X",
-            "matrixGeneFilter": "var/highly_variable"
+            "matrixGeneFilter": "var/highly_variable_2k"
           }
         }
       ]
